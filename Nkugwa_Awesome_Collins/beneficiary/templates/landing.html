@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Refugee Support Program</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="landing-page">
+        <div class="landing-logo">
+            <img src="{% static 'images/fca-logo.jpg' %}" alt="FCA Logo">
+        </div>
+        <h1 class="landing-title">Refugee Support Program</h1>
+        <a href="{% url 'register' %}" class="register-btn">Register</a>
+    </div>
+</body>
+</html>

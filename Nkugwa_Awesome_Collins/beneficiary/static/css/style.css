@@ -1,0 +1,219 @@
+@font-face {
+    font-family: 'Agency FB';
+    src: local('Agency FB');
+}
+
+:root {
+    --pale-green: #99CC32;
+    --deep-green: #385723;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Agency FB', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* ---------- Landing Page ---------- */
+.landing-page {
+    background-color: var(--pale-green);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.landing-logo {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.landing-logo img {
+    width: 130px;
+}
+
+.landing-title {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.register-btn {
+    background-color: #ffffff;
+    color: var(--pale-green);
+    border: none;
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+    font-family: inherit;
+    cursor: pointer;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* ---------- Registration Page ---------- */
+.register-page {
+    display: flex;
+    min-height: 100vh;
+}
+
+.register-sidebar {
+    background-color: var(--pale-green);
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.register-sidebar .landing-logo {
+    width: 170px;
+    height: 170px;
+}
+
+.register-sidebar .landing-logo img {
+    width: 110px;
+}
+
+.register-sidebar h2 {
+    color: #ffffff;
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+.register-main {
+    width: 65%;
+    padding: 3rem 4rem;
+}
+
+.register-main h1 {
+    text-align: center;
+    color: var(--deep-green);
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+}
+
+.success-alert {
+    background-color: var(--pale-green);
+    color: #ffffff;
+    padding: 0.9rem 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.success-alert a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.3rem;
+}
+
+.form-field {
+    flex: 1;
+}
+
+.form-field label {
+    display: block;
+    color: var(--deep-green);
+    font-weight: bold;
+    margin-bottom: 0.4rem;
+}
+
+.form-field label .required {
+    color: red;
+}
+
+.form-field input[type="text"],
+.form-field input[type="date"],
+.form-field select {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid var(--pale-green);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.form-field.has-error input,
+.form-field.has-error select {
+    border-color: red;
+}
+
+.field-error {
+    color: red;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+}
+
+.gender-options {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    border: 1px solid var(--pale-green);
+    padding: 0.9rem;
+}
+
+.gender-options label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: normal;
+    color: #333;
+    margin: 0;
+}
+
+.gender-options input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--deep-green);
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    margin: 0;
+}
+
+.gender-options input[type="radio"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 8px;
+    height: 8px;
+    background-color: var(--deep-green);
+    border-radius: 50%;
+}
+
+.submit-btn {
+    background-color: var(--pale-green);
+    color: #ffffff;
+    border: none;
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+    font-family: inherit;
+    cursor: pointer;
+    margin-top: 1rem;
+}

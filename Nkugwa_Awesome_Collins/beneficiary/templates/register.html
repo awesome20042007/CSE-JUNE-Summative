@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Beneficiary Registration Form</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="register-page">
+        <div class="register-sidebar">
+            <div class="landing-logo">
+                <img src="{% static 'images/fca-logo.jpg' %}" alt="FCA Logo">
+            </div>
+            <h2>Refugee Support Program</h2>
+        </div>
+
+        <div class="register-main">
+            <h1>BENEFICIARY REGISTRATION FORM</h1>
+
+            {% if success %}
+            <div class="success-alert">
+                <span>Beneficiary registered successfully</span>
+                <a href="{% url 'register' %}">&times;</a>
+            </div>
+            {% endif %}
+
+            <form method="POST" novalidate>
+                {% csrf_token %}
+
+                <div class="form-row">
+                    <div class="form-field {% if form.first_name.errors %}has-error{% endif %}">
+                        <label>First Name <span class="required">*</span></label>
+                        {{ form.first_name }}
+                        {% if form.first_name.errors %}<div class="field-error">{{ form.first_name.errors.0 }}</div>{% endif %}
+                    </div>
+                    <div class="form-field {% if form.last_name.errors %}has-error{% endif %}">
+                        <label>Last name <span class="required">*</span></label>
+                        {{ form.last_name }}
+                        {% if form.last_name.errors %}<div class="field-error">{{ form.last_name.errors.0 }}</div>{% endif %}
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-field {% if form.date_of_birth.errors %}has-error{% endif %}">
+                        <label>Date of birth <span class="required">*</span></label>
+                        {{ form.date_of_birth }}
+                        {% if form.date_of_birth.errors %}<div class="field-error">{{ form.date_of_birth.errors.0 }}</div>{% endif %}
+                    </div>
+                    <div class="form-field {% if form.place_of_birth.errors %}has-error{% endif %}">
+                        <label>Place of Birth <span class="required">*</span></label>
+                        {{ form.place_of_birth }}
+                        {% if form.place_of_birth.errors %}<div class="field-error">{{ form.place_of_birth.errors.0 }}</div>{% endif %}
+                    </div>
+                </div>
+
+                <div class="form-field" style="margin-bottom: 1.3rem;">
+                    <label>Gender</label>
+                    <div class="gender-options">
+                        {% for radio in form.gender %}
+                            <label>{{ radio.tag }} {{ radio.choice_label }}</label>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-field {% if form.nationality.errors %}has-error{% endif %}">
+                        <label>Nationality <span class="required">*</span></label>
+                        {{ form.nationality }}
+                        {% if form.nationality.errors %}<div class="field-error">{{ form.nationality.errors.0 }}</div>{% endif %}
+                    </div>
+                    <div class="form-field {% if form.marital_status.errors %}has-error{% endif %}">
+                        <label>Marital status <span class="required">*</span></label>
+                        {{ form.marital_status }}
+                        {% if form.marital_status.errors %}<div class="field-error">{{ form.marital_status.errors.0 }}</div>{% endif %}
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-field {% if form.settlement_camp.errors %}has-error{% endif %}">
+                        <label>Settlement camp <span class="required">*</span></label>
+                        {{ form.settlement_camp }}
+                        {% if form.settlement_camp.errors %}<div class="field-error">{{ form.settlement_camp.errors.0 }}</div>{% endif %}
+                    </div>
+                    <div class="form-field {% if form.date_joined_camp.errors %}has-error{% endif %}">
+                        <label>Date of joining Settlement camp <span class="required">*</span></label>
+                        {{ form.date_joined_camp }}
+                        {% if form.date_joined_camp.errors %}<div class="field-error">{{ form.date_joined_camp.errors.0 }}</div>{% endif %}
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Register</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
